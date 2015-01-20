@@ -23,5 +23,5 @@ func CreateScreen(width, height lib.Coord) *lib.Screen {
     screen[y] = BuildString(width, lib.EmptySpace)
   }
 
-  return &lib.Screen{ screen }
+  return &lib.Screen{ screen, width, height }
 }
