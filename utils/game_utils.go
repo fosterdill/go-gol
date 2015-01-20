@@ -6,6 +6,8 @@ import (
 
 func CreateGame() *lib.Game {
   width, height := ScreenSize()
-  blankScreen := CreateScreen(width, height)
-  return &lib.Game{ Screen: blankScreen, NextScreen: blankScreen }
+  return &lib.Game{
+    Screen: CreateScreen(width, height),
+    NextScreen: CreateScreen(width, height),
+  }
 }

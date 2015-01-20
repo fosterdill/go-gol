@@ -21,7 +21,6 @@ func (game *Game) Start() {
 
 func (game *Game) showScreen() {
   screen := game.Screen
-
   for y := len(screen.Tiles) - 1; y >= 0; y-- {
     fmt.Println(screen.Tiles[y])
   }
@@ -31,4 +30,5 @@ func (game *Game) iterate() {
 }
 
 func (game *Game) setup() {
+  game.Screen.Revive(1, 1)
 }
