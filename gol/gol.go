@@ -6,5 +6,5 @@ import (
 
 func Run() {
   game := utils.CreateGame()
-  game.Start(100)
+  game.Start(50)
 }

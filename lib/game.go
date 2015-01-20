@@ -74,4 +74,16 @@ func (game *Game) setup() {
   game.Screen.Keep(2, 2)
   game.Screen.Keep(1, 2)
   game.Screen.Keep(0, 1)
+
+  game.Screen.Keep(2+5, 0+5)
+  game.Screen.Keep(2+5, 1+5)
+  game.Screen.Keep(2+5, 2+5)
+  game.Screen.Keep(1+5, 2+5)
+  game.Screen.Keep(0+5, 1+5)
+
+  game.Screen.Keep(2+8, 0+5)
+  game.Screen.Keep(2+8, 1+5)
+  game.Screen.Keep(2+8, 2+5)
+  game.Screen.Keep(1+8, 2+5)
+  game.Screen.Keep(0+8, 1+5)
 }
