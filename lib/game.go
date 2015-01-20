@@ -43,7 +43,7 @@ func (game *Game) iterate() {
       isDead := game.Screen.IsDeadAt(Coord(x), Coord(y))
       numberOfLivingNeighbors := game.Screen.LivingNeighbors(Coord(x), Coord(y))
       shouldSpawn := numberOfLivingNeighbors == 3
-      shouldDie := numberOfLivingNeighbors < 2 && numberOfLivingNeighbors > 3
+      shouldDie := numberOfLivingNeighbors < 2 || numberOfLivingNeighbors > 3
 
       if isDead {
         if shouldSpawn {
@@ -69,7 +69,9 @@ func (game *Game) swapScreens() {
 }
 
 func (game *Game) setup() {
-  game.Screen.Keep(1, 1)
-  game.Screen.Keep(0, 0)
-  game.Screen.Keep(1, 0)
+  game.Screen.Keep(2, 0)
+  game.Screen.Keep(2, 1)
+  game.Screen.Keep(2, 2)
+  game.Screen.Keep(1, 2)
+  game.Screen.Keep(0, 1)
 }
