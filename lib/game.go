@@ -6,16 +6,29 @@ import (
 
 type Game struct {
   Screen *Screen
+  NextScreen *Screen
 }
 
 func (game *Game) Start() {
-  game.ShowScreen()
+  game.setup()
+  game.showScreen()
+
+  for game.Screen.LiveCells() > 0 {
+    game.iterate()
+    game.showScreen()
+  }
 }
 
-func (game *Game) ShowScreen() {
+func (game *Game) showScreen() {
   screen := game.Screen
 
   for y := len(screen.Tiles) - 1; y >= 0; y-- {
     fmt.Println(screen.Tiles[y])
   }
+}
+
+func (game *Game) iterate() {
+}
+
+func (game *Game) setup() {
 }

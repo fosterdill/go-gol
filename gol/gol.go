@@ -5,8 +5,6 @@ import (
 )
 
 func Run() {
-  width, height := utils.ScreenSize()
-  screen := utils.CreateScreen(width, height)
-  game := utils.CreateGame(screen)
+  game := utils.CreateGame()
   game.Start()
 }
